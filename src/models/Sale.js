@@ -1,29 +1,18 @@
 const mongoose = require("mongoose");
-
-const ProductSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.SchemaTypes.ObjectId,
-    required: true
-  },
-  salePrice: {
-    type: Number,
-    required: true
-  },
-  finalPrice: {
-    type: Number,
-    required: true
-  }
-});
+const ProductSchema = require("../schemas/Products");
+const CreditCardSchema = require("../schemas/CreditCard");
+const ShipmentInfoSchema = require("../schemas/ShipmentInfo");
+const UserSchema = require("../schemas/User");
 
 const SaleSchema = new mongoose.Schema({
+  user: UserSchema,
+  shipmentInfo: ShipmentInfoSchema,
+  creditCard: CreditCardSchema,
   date: {
     type: Date,
     required: true
   },
-  user: {
-    type: mongoose.SchemaTypes.ObjectId,
-    required: true
-  },
+  coupon: String,
   products: [ProductSchema]
 });
 
