@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const api = require('./api');
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const api = require("./api");
 
 mongoose.connect(process.env.DB_URL);
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(
@@ -14,7 +14,7 @@ app.use(
     extended: true
   })
 );
-app.use(morgan('tiny'));
+app.use(morgan("tiny"));
 
 api(app);
 
