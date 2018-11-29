@@ -9,11 +9,11 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  salePrice: {
+  final: {
     type: Number,
     required: true
   },
-  finalPrice: {
+  total: {
     type: Number,
     required: true
   }

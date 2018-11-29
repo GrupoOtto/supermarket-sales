@@ -5,7 +5,9 @@ exports.create = {
     user: Joi.object({
       _id: Joi.string().hex(),
       name: Joi.string().required(),
-      email: Joi.email().required()
+      email: Joi.string()
+        .email()
+        .required()
     }),
     shipmentInfo: Joi.object({
       province: Joi.string().required(),
@@ -21,7 +23,6 @@ exports.create = {
         .required(),
       name: Joi.string().required()
     }),
-    date: Joi.date().required(),
     coupon: Joi.string().required(),
     products: Joi.array()
       .required()
@@ -30,8 +31,8 @@ exports.create = {
           _id: Joi.string()
             .hex()
             .required(),
-          salePrice: Joi.number().required(),
-          finalPrice: Joi.number().required(),
+          final: Joi.number().required(),
+          total: Joi.number().required(),
           amount: Joi.number().required()
         })
       )

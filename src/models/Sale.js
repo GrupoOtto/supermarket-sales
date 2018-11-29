@@ -10,7 +10,8 @@ const SaleSchema = new mongoose.Schema({
   creditCard: CreditCardSchema,
   date: {
     type: Date,
-    required: true
+    required: true,
+    default: Date.now
   },
   coupon: String,
   products: [ProductSchema]
