@@ -3,7 +3,9 @@ const Joi = require("joi");
 exports.create = {
   body: {
     user: Joi.object({
-      _id: Joi.string().hex(),
+      _id: Joi.string()
+        .hex()
+        .allow(""),
       name: Joi.string().required(),
       email: Joi.string()
         .email()
@@ -13,7 +15,7 @@ exports.create = {
       province: Joi.string().required(),
       city: Joi.string().required(),
       street: Joi.string().required(),
-      department: Joi.string(),
+      department: Joi.string().allow(""),
       number: Joi.string().required(),
       phone: Joi.string().required()
     }),
@@ -23,7 +25,7 @@ exports.create = {
         .required(),
       name: Joi.string().required()
     }),
-    coupon: Joi.string().required(),
+    coupon: Joi.string().allow(""),
     products: Joi.array()
       .required()
       .items(
