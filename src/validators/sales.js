@@ -3,9 +3,7 @@ const Joi = require("joi");
 exports.create = {
   body: {
     user: Joi.object({
-      _id: Joi.string()
-        .hex()
-        .allow(""),
+      _id: Joi.string().allow(""),
       name: Joi.string().required(),
       email: Joi.string()
         .email()
