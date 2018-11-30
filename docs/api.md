@@ -45,8 +45,8 @@
 | -------- | ---------- | -------- | ------------------------------------- |
 | `_id`    | `ObjectId` | ✔        | An unique identification for product. |
 | `final`  | `String`   | ✔        | Final price for a product.            |
-| `amount` | `String`   | ✔        | Quantity bought                       |
-| `total`  | `String`   | ✔        | Price without discount                |
+| `amount` | `String`   | ✔        | Quantity bought.                      |
+| `total`  | `String`   | ✔        | Price without discount.               |
 
 #### Sale : `Object`
 
@@ -63,6 +63,10 @@
 
 - `GET: /` Returns all sales.
 
+- `GET: /{id}` Returns a particular sale.
+
+- `DELETE: /{id}` Delete a sale.
+
 * `POST: /` Create a new Sale.
 
 **Body**
@@ -74,7 +78,3 @@
 | `creditCard`   | `CreditCard`        | ✔        | The lastname of the employee.       |
 | `products`     | `Array of Products` | ✔        | The e-mail address of the employee. |
 | `coupon`       | `String`            | ✔        | The type of employee its refer.     |
-
-- `GET: /{id}` Returns a particular sale.
-
-- `DELETE: /{id}` Delete a sale.
