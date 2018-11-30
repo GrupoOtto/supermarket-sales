@@ -30,4 +30,11 @@ module.exports = app => {
       res.status(status.CREATED).json(await salesController.get(req.params.id));
     })
   );
+
+  app.delete(
+    "/:id",
+    handle(async (req, res) => {
+      res.status(status.OK).json(await salesController.delete(req.params.id));
+    })
+  );
 };
